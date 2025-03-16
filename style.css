@@ -25,7 +25,7 @@ header {
 
 .nav-container {
     display: flex;
-    flex-wrap: wrap;
+    gap:30%;
     align-items: center;
 }
 
@@ -34,20 +34,17 @@ header {
     height: auto;
 }
 
-.nav-list,
-.nav-links {
+.nav-list {
     list-style: none;
     display: flex;
     margin-left: 20px;
 }
 
-.nav-list li,
-.nav-links li {
+.nav-list li {
     margin-right: 15px;
 }
 
-.nav-list a,
-.nav-links a {
+.nav-list a {
     text-decoration: none;
     color: #000;
     font-size: 16px;
@@ -55,7 +52,28 @@ header {
     display: block;
 }
 
-.encabezado {
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+}
+
+.encabezado{
+    margin-left: -130px;
+    width: 120%;
     height: 80px;
     background-color: var(--azul);
     padding: 20px;
@@ -65,50 +83,51 @@ header {
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    
 }
 
-.encabezado h3 {
+.encabezado h3{
     margin-bottom: 10px;
 }
 
-.encabezado p {
+.encabezado p{
     color: #000000;
 }
 
-.hero, .hero2 {
+.hero {
     position: relative;
     width: 100%;
     display: inline-block;
 }
 
 .hero img {
-    margin-top: -15px;
+    margin-top: -15px; 
     width: 100%;
     height: auto;
     display: block;
 }
 
-.overlay-content, .overlay-content2 {
+.overlay-content {
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30%; 
+    left: 70%;
+    transform: translate(-50%, -50%); 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
-    width: 80%;
+    width: 80%; 
 }
 
-.overlay-title, .overlay-title2 {
+.overlay-title {
     color: white;
     font-size: 36px;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
 
-.overlay-subtitle, .overlay-subtitle2 {
+.overlay-subtitle {
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -121,50 +140,55 @@ header {
     color: white;
     font-size: 16px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
+    max-width: 600px; 
 }
 
-.comprar, .conoce {
+.comprar {
+    background-color: var(--azul); 
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px; 
+    text-shadow: none;
+    transition: background-color 0.3s ease;
+    height: 60px;
+}
+
+.comprar:hover {
+    background-color: #176BAA; 
+}
+
+.conoce{
+    height: 60px;
+    background-color: #000000; 
+    color: white;
     border: none;
     padding: 12px 24px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
+    margin-left: 15px; 
     text-shadow: none;
     transition: background-color 0.3s ease;
-    height: 60px;
-    border-radius: 5px;
 }
 
-.comprar {
-    background-color: var(--azul);
-    color: white;
-}
-
-.comprar:hover {
-    background-color: #176BAA;
-}
-
-.conoce {
-    background-color: #000000;
-    color: white;
-    margin-left: 15px;
-}
-
-.conoce:hover {
+.conoce:hover{
     background-color: var(--negroHover);
 }
 
-.envios {
+.envios{
     background-color: #000000;
     height: 190px;
     width: 100%;
-    margin-top: -5px;
+    margin-top: -5px; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
 }
 
 .envios div {
@@ -173,52 +197,91 @@ header {
     width: 290px;
     background-color: #ffffff;
     margin-left: 80px;
-    transition: transform 0.3s ease;
-    border-radius: 5px;
+    transition: transform 0.3s ease; /
 }
 
 .envios div:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); 
 }
 
-.enviostitulo {
+.enviostitulo{
     color: #ffffff;
     margin-left: 70px;
 }
-
-.productos {
+.productos{
     margin-top: 30px;
     margin-left: 180px;
     height: 320px;
     display: flex;
     gap: 70px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
-.base1, .base2, .base, .basegris {
+.base1{
+    margin-top: 24px;
+}
+
+.base2{
     margin-top: 30px;
 }
 
-.hero2 {
+.base{
+    margin-top: 135px;
+}
+
+.basegris{
+    margin-top: 5px;
+}
+
+.hero2{
     position: relative;
     width: 100%;
     display: inline-block;
 }
+.overlay-content2{
+    position: absolute;
+    top: 30%; 
+    left: 20%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    width: 80%; 
+}
+
+.overlay-title2{
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px; 
+}
+
+.overlay-subtitle2{
+    margin-top:15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
 
 @media screen and (max-width: 768px) {
-    .overlay-content, .overlay-content2 {
+    .overlay-content {
         top: 50%;
+        left: 50%;
         width: 90%;
-        text-align: center;
+        transform: translate(-50%, -50%);
     }
-
+}
+@media screen and (max-width: 768px) {
     .productos {
-        margin-left: 0;
         flex-wrap: wrap;
         justify-content: center;
+        margin-left: 0;
     }
-
+}
+@media screen and (max-width: 768px) {
     .envios {
         flex-wrap: wrap;
         flex-direction: column;
@@ -228,6 +291,5 @@ header {
     .envios div {
         width: 90%;
         text-align: center;
-        margin-left: 0;
     }
 }
