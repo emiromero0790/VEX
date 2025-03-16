@@ -4,6 +4,11 @@
     --negroHover: #333333;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -68,10 +73,10 @@ header {
 }
 
 .encabezado{
-    width: 100%;
+    margin-left: -130px;
+    width: 120%;
     height: 80px;
     background-color: var(--azul);
-    color: #000000;
     padding: 20px;
     margin-top: 40px;
     display: flex;
@@ -178,7 +183,7 @@ header {
 
 .envios{
     background-color: #000000;
-    height: 230px;
+    height: 190px;
     width: 100%;
     margin-top: -5px; 
     display: flex;
