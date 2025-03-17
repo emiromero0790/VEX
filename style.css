@@ -399,6 +399,10 @@ header {
         margin-top: 5px;
     }
 
+    .overlay-title{
+        margin-top: -10px;
+    }
+
     .overlay-text {
         text-align: justify;
         color: white;
@@ -409,8 +413,8 @@ header {
 
     .comprar, .conoce {
         margin-top: 5px;
-        width: 60px;
-        height: 25px;
+        width: 80px;
+        height: 20px;
         font-size: 8px; 
         padding: 5px 10px;
     }
@@ -431,6 +435,7 @@ header {
     }
     .enviostitulo{
         font-size: 10px;
+        margin-left: 40px;
         margin-top: 10px;
     }
     .envios img{
@@ -438,8 +443,8 @@ header {
     }
     .envios div{
         margin-left: 40px;
-        width: 180px;
-        height: 80px;
+        width: 160px;
+        height: 70px;
         font-size: 10px;
     }
 
