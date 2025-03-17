@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX - Registro de Producto</title>
+    <link rel="stylesheet" href="styleR.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="/">
+                    <img src="images/vex logo final2.png" alt="VEX Logo" class="logo">
+                </a>
+                <div class="nav-products">
+                    <a href="#" class="nav-link">DELI T</a>
+                    <a href="#" class="nav-link">BUX</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="search" placeholder="Buscar producto">
+                    <button type="submit">🔍</button>
+                </div>
+                <a href="#" class="nav-link">Mi cuenta</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="registration-container">
+        <h1>Regístrate para activar tu producto</h1>
+        <p class="subtitle">Activa tu garantía para recibir novedades y gozar de sus beneficios</p>
+
+        <form class="registration-form">
+            <section class="form-section">
+                <h2>Tus datos</h2>
+                <p class="form-note">Importante: los datos del usuario de este artículo no pueden ser modificados una vez registrados.</p>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico*</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nombre*</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Apellido*</label>
+                    <input type="text" id="lastname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Número telefónico*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Quieres saber más de VEX?</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="updates">
+                            Recibe las últimas novedades y promociones de VEX por correo electrónico
+                        </label>
+                        <label>
+                            <input type="checkbox" name="offers">
+                            Obtén un descuento especial para próximas compras, así como acceso a ofertas exclusivas
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Información de tu dispositivo</h2>
+                <div class="form-group">
+                    <label for="serial">Número de serie*</label>
+                    <input type="text" id="serial" required>
+                    <small>Ej: SER-01-1234-5678</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="purchase-date">¿Cuándo compraste tu producto VEX?*</label>
+                    <input type="date" id="purchase-date" required>
+                </div>
+            </section>
+
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <ul>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Para negocios</h3>
+                <ul>
+                    <li><a href="#">Tecnología para tu negocio</a></li>
+                    <li><a href="#">Especificaciones y documentos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Servicio al cliente</a></li>
+                    <li><a href="#">Solución de problemas</a></li>
+                    <li><a href="#">Registra tu máquina</a></li>
+                    <li><a href="#">Activa tu garantía</a></li>
+                    <li><a href="#">Términos de garantía</a></li>
+                    <li><a href="#">Detalles de la entrega</a></li>
+                    <li><a href="#">Facturación</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="#">Aviso de privacidad</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Términos de uso del sitio web</a>
+                <a href="#">Política de cookies</a>
+            </div>
+            <div class="region-selector">
+                <span>🇲🇽</span>
+                <span>México</span>
+                <button>Cambiar el idioma o región</button>
+            </div>
+            <div class="copyright">
+                © VEX 2023
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
