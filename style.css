@@ -24,11 +24,47 @@ body {
     text-align: center;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-left: 1050px;
+  }
+  
+  .compraVex{
+    color: white;
+    background-color: #000000;
+    text-align: center;
+    margin-top: -15px;
+    height: 40px;
+  }
+
+  .compraVex h3{
+    padding: 20px;
+  }
+
+  .search-bar input {
+      background: none;
+      border: none;
+      color: var(--black);
+      padding: 0.25rem 0.5rem;
+      outline: none;
+  }
+  
+  .search-bar button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 0.5rem;
+  }
 
 .container2 {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 110px;
     padding: 20px;
     align-items: flex-start;
     margin-top: 10px;
@@ -288,7 +324,7 @@ header {
 
 .encabezado{
     width: 130%;
-    margin-left: -210px;
+    margin-left: -220px;
     height: 80px;
     background-color: var(--azul);
     padding: 20px;
