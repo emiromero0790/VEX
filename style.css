@@ -12,6 +12,35 @@ html, body {
     min-height: 100vh;
 }
 
+
+.nav-list a, .nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    position: relative; 
+}
+
+
+.nav-list a::after, .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--azul);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover::after, .nav-links a:hover::after {
+    width: 100%;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
