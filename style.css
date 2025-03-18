@@ -486,6 +486,7 @@ header {
     text-shadow: none;
     transition: background-color 0.3s ease;
     height: 60px;
+    border-radius: 15px;
 }
 
 .comprar:hover {
@@ -505,6 +506,7 @@ header {
     margin-left: 15px; 
     text-shadow: none;
     transition: background-color 0.3s ease;
+    border-radius: 15px;
 }
 
 .conoce:hover{
@@ -528,7 +530,8 @@ header {
     width: 290px;
     background-color: #ffffff;
     margin-left: 80px;
-    transition: transform 0.3s ease; /
+    transition: transform 0.3s ease; 
+    border-radius:5px;
 }
 
 .envios div:hover {
