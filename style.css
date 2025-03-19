@@ -1,6 +1,105 @@
 :root {
+    --duracion: 4s;
+    --transicion: 1s;
     --azul: #219BEF;
     --negroHover: #333333;
+}
+
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.75rem;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.item {
+    text-align: center;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height:350px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-8px);
+}
+
+.imagen-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.imagen1 {
+    animation: cascadeFade var(--duracion) infinite;
+    z-index: 2;
+}
+
+.imagen2 {
+    z-index: 1;
+}
+
+@keyframes cascadeFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+
+.item p {
+    margin: 0.5rem;
+    font-size: 0.875rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 0 0.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin: 0.25rem 0 0.75rem;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #2563eb;
 }
 
 html, body {
@@ -140,15 +239,7 @@ body {
       padding: 0 0.5rem;
   }
 
-.container2 {
-    display: flex;
-    justify-content: center;
-    gap: 110px;
-    padding: 20px;
-    align-items: flex-start;
-    margin-top: 10px;
-    margin-bottom: 65px;
-}
+
 
 .item {
     width: 280px;
