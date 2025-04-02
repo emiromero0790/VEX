@@ -15,15 +15,13 @@
         <div class="nav-container">
             <img src="images/v3333_3.png" alt="VEX Imagotipo" class="logo">
             <ul class="nav-list">
-                <li class = "submenu"><a href="login.php">Iniciar sesión</a></li>
-                <li class = "submenu"><a href="#">DELI T</a></li>
-                <li class = "submenu"><a href="#">BUX</a></li>
-                <li class = "submenu"><a href="#">VEXAPP</a></li>
-                <li class = "submenu"><a href="register.html">Registra tu producto</a></li>
-                <li class = "submenu"><a href="#">Para negocios</a></li>
-                <li class = "submenu"><a href="#">Facturación</a></li>
-                <li class = "submenu"><a href="#">Contáctanos</a></li>
-
+                <li class="submenu"><a href="#">DELI T</a></li>
+                <li class="submenu"><a href="#">BUX</a></li>
+                <li class="submenu"><a href="#">VEXAPP</a></li>
+                <li class="submenu"><a href="#">Para negocios</a></li>
+                <li class="submenu"><a href="#">Facturación</a></li>
+                <li class="submenu"><a href="#">Contáctanos</a></li>
+                <li class="submenu login-btn"><a href="login.php">Iniciar sesión</a></li>
             </ul>
         </div>
         <a href="#" class="fixed-button">DANOS TU OPINIÓN</a>

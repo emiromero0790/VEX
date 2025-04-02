@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($usuario) {
         $_SESSION['usuario'] = $usuario['id_usuario'];
-        header("Location: index.html");
+        header("Location: index.php");
         exit();
     } else {
         $error = "Correo o contraseña incorrectos";
