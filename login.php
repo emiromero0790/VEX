@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="input-container">
                             <span class="input-icon">🔒</span>
                             <input type="password" id="password" name="contrasena" placeholder="••••••••" required>
-                            <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+                            <button type="button" class="toggle-password" id="toggle_password">👁️</button>
                             <span class="focus-border"></span>
                         </div>
                     </div>
@@ -134,5 +134,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </div>
+    <script src="toggle-password.js"></script>
 </body>
 </html>
