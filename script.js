@@ -15,3 +15,23 @@ function animarEncabezado() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.querySelector('.submenu-login-btn');
+    
+    if (loginButton) {
+        loginButton.addEventListener('click', function() {
+            window.location.href = 'login.php';
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.querySelector('.submenu-registration-btn');
+    
+    if (loginButton) {
+        loginButton.addEventListener('click', function() {
+            window.location.href = 'registration.php';
+        });
+    }
+});
+

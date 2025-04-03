@@ -21,7 +21,8 @@
                 <li class="submenu"><a href="#">Para negocios</a></li>
                 <li class="submenu"><a href="#">Facturación</a></li>
                 <li class="submenu"><a href="#">Contáctanos</a></li>
-                <li class="submenu login-btn"><a href="login.php">Iniciar sesión</a></li>
+                <button class="submenu-login-btn">Iniciar sesión</button>
+                <button class="submenu-registration-btn">Regístrate</button>
             </ul>
         </div>
         <a href="#" class="fixed-button">DANOS TU OPINIÓN</a>

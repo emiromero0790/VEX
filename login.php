@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 
                 <p class="signup-text">
-                    ¿No tienes una cuenta? <a href="#" class="signup-link">Regístrate</a>
+                    ¿No tienes una cuenta? <a href="registration.php" class="signup-link">Regístrate</a>
                 </p>
 
                 <div class="language-selector">

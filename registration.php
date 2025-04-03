@@ -1,0 +1,200 @@
+<?php
+session_start();
+include 'conexion.php';
+
+$error = "";
+$success = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        $nombre = trim($_POST['nombre']);
+        $apellidos = trim($_POST['apellidos']);
+        $correo = trim($_POST['correo']);
+        $contrasena = trim($_POST['contrasena']);
+        $telefono = trim($_POST['telefono']);
+        $estado = trim($_POST['estado']);
+        $ciudad = trim($_POST['ciudad']);
+        $colonia = trim($_POST['colonia']);
+        $numero_exterior = trim($_POST['numero_exterior']);
+        $numero_interior = trim($_POST['numero_interior'] ?? null);
+        $codigo_postal = trim($_POST['codigo_postal']);
+
+        $stmt = $conn->prepare("SELECT correo FROM usuarios WHERE correo = ?");
+        $stmt->execute([$correo]);
+        if ($stmt->rowCount() > 0) {
+            $error = "Este correo electrónico ya está registrado";
+        } else {
+            $contrasena_sha1 = sha1($contrasena);
+            
+            $sql = "INSERT INTO usuarios (nombre, apellidos, correo, contrasena, telefono, estado, ciudad, colonia, numero_exterior, numero_interior, codigo_postal) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$nombre, $apellidos, $correo, $contrasena_sha1, $telefono, $estado, $ciudad, $colonia, $numero_exterior, $numero_interior, $codigo_postal]);
+            
+            $success = "Registro exitoso. Redirigiendo al login...";
+            header("refresh:2;url=login.php");
+        }
+    } catch(PDOException $e) {
+        $error = "Error al registrar: " . $e->getMessage();
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX - Registro</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="login-container">
+            <div class="side-image">
+                <div class="overlay">
+                    <h2>Únete a VEX</h2>
+                    <p>Comienza tu viaje con nosotros</p>
+                </div>
+            </div>
+            <div class="login-content">
+                <div class="logo-container">
+                    <img src="images/v3333_3.png" alt="VEX Logo" class="logo">
+                </div>
+                <h1>Crear cuenta</h1>
+                <p class="subtitle">Completa tus datos para registrarte</p>
+
+                <?php if ($error): ?>
+                    <div class="error-message"><?php echo $error; ?></div>
+                <?php endif; ?>
+
+                <?php if ($success): ?>
+                    <div class="success-message"><?php echo $success; ?></div>
+                <?php endif; ?>
+
+                <form id="registrationForm" class="registration-form" method="POST" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <div class="input-container">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <div class="input-container">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="apellidos" name="apellidos" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="correo">Correo electrónico</label>
+                        <div class="input-container">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <div class="input-container">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="contrasena" name="contrasena" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('contrasena')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmar_contrasena">Confirmar Contraseña</label>
+                        <div class="input-container">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('confirmar_contrasena')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <div class="input-container">
+                            <span class="input-icon">📱</span>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <div class="input-container">
+                            <span class="input-icon">📍</span>
+                            <input type="text" id="estado" name="estado" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <div class="input-container">
+                            <span class="input-icon">🏙️</span>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colonia">Colonia</label>
+                        <div class="input-container">
+                            <span class="input-icon">🏘️</span>
+                            <input type="text" id="colonia" name="colonia" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_exterior">Número Exterior</label>
+                        <div class="input-container">
+                            <span class="input-icon">🏠</span>
+                            <input type="text" id="numero_exterior" name="numero_exterior" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_interior">Número Interior (opcional)</label>
+                        <div class="input-container">
+                            <span class="input-icon">🏢</span>
+                            <input type="text" id="numero_interior" name="numero_interior">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codigo_postal">Código Postal</label>
+                        <div class="input-container">
+                            <span class="input-icon">📮</span>
+                            <input type="text" id="codigo_postal" name="codigo_postal" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="login-button">
+                            <span>Registrarse</span>
+                            <div class="button-loader"></div>
+                        </button>
+                    </div>
+                </form>
+
+                <p class="signup-text">
+                    ¿Ya tienes una cuenta? <a href="login.php" class="signup-link">Iniciar sesión</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="registration.js"></script>
+</body>
+</html>
