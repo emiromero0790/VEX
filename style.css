@@ -7,11 +7,11 @@
 
 .submenu-registration-btn{
     margin-left: 10px;
+    background-color: #000000;
 }
 
 .submenu-login-btn, .submenu-registration-btn {
     position: relative;
-    background: var(--azul);
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -24,6 +24,10 @@
     box-shadow: 0 4px 15px rgba(33, 155, 239, 0.2);
 }
   
+.submenu-login-btn{
+    background-color: var(--azul);
+}
+
 .submenu-login-btn::before, .submenu-registration-btn::before {
     content: '';
     position: absolute;
