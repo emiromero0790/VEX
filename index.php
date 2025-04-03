@@ -50,8 +50,8 @@
                 El uso de NFC en lugar de códigos QR para acceder al menú en los restaurantes ofrece ventajas como rapidez, comodidad, menos pasos y errores, resistencia y durabilidad, así como una experiencia de usuario mejorada.
             </p>
             <div>
-                <button class="comprar">Comprar ahora</button>
-                <button class="conoce">Conoce más</button>
+                <button class="comprar1">Comprar ahora</button>
+                <button class="conoce1">Conoce más</button>
             </div>
         </div>
     </div>
@@ -100,7 +100,8 @@
     </div>
 
     <div class="hero2">
-        <img src="images/v3330_876.png" alt="" width="100%">
+      <img src="images/GIF 1900px.gif" alt="" width="100%">
+        <!-- <img src="images/v3330_876.png" alt="" width="100%"> -->
         <div class="overlay-content2">
             <h1 class="overlay-title2">BUX</h1>
             <h2 class="overlay-subtitle2">¿Para qué ensuciarse?</h2>
