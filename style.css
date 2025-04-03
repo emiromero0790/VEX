@@ -109,7 +109,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--azul);
     height: 550px;
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -165,7 +165,7 @@
 .item p {
     margin: 1rem;
     font-size: 1.1rem;
-    color: #333;
+    color: #ffffff;
     font-weight: 500;
     line-height: 1.4;
     padding: 0 1rem;
@@ -174,7 +174,7 @@
 .button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: #3b82f6;
+    background-color: var(--azul);
     color: white;
     text-decoration: none;
     border-radius: 0.5rem;
