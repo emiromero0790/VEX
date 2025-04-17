@@ -1,38 +1,25 @@
-class RegistrationManager {
+class LoginManager {
     constructor() {
-        this.apiUrl = 'http://localhost/VEX/procesar_registro.php';
+        this.apiUrl = 'http://localhost/VEX/procesar_login.php';
         this.initializeEventListeners();
         this.animateInputs();
     }
 
     initializeEventListeners() {
-        const form = document.getElementById('registrationForm');
+        const form = document.getElementById('loginForm');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            this.handleRegistration();
+            this.handleLogin();
         });
     }
 
-    async handleRegistration() {
-        if (!this.validateForm()) {
-            return;
-        }
-
+    async handleLogin() {
         const button = document.querySelector('.login-button');
         button.classList.add('loading');
         
         const userData = {
-            nombre: document.getElementById('nombre').value,
-            apellidos: document.getElementById('apellidos').value,
             correo: document.getElementById('correo').value,
-            contrasena: document.getElementById('contrasena').value,
-            telefono: document.getElementById('telefono').value,
-            estado: document.getElementById('estado').value,
-            ciudad: document.getElementById('ciudad').value,
-            colonia: document.getElementById('colonia').value,
-            numero_exterior: document.getElementById('numero_exterior').value,
-            numero_interior: document.getElementById('numero_interior').value || null,
-            codigo_postal: document.getElementById('codigo_postal').value
+            contrasena: document.getElementById('contrasena').value
         };
 
         try {
@@ -48,12 +35,10 @@ class RegistrationManager {
             const result = await response.json();
             
             if (result.success) {
-                this.showNotification('Registro exitoso', 'success');
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 2000);
+                this.showNotification('Login exitoso', 'success');
+                window.location.href = 'index.html';
             } else {
-                this.showNotification(result.message || 'Error al registrar usuario', 'error');
+                this.showNotification(result.message || 'Error al iniciar sesión', 'error');
             }
         } catch (error) {
             this.showNotification('Error al conectar con el servidor', 'error');
@@ -61,30 +46,6 @@ class RegistrationManager {
         } finally {
             button.classList.remove('loading');
         }
-    }
-
-    validateForm() {
-        const password = document.getElementById('contrasena').value;
-        const confirmPassword = document.getElementById('confirmar_contrasena').value;
-        
-        if (password !== confirmPassword) {
-            this.showNotification('Las contraseñas no coinciden', 'error');
-            return false;
-        }
-
-        const telefono = document.getElementById('telefono').value;
-        if (!/^\d{10}$/.test(telefono)) {
-            this.showNotification('El teléfono debe tener 10 dígitos', 'error');
-            return false;
-        }
-
-        const codigoPostal = document.getElementById('codigo_postal').value;
-        if (!/^\d{5}$/.test(codigoPostal)) {
-            this.showNotification('El código postal debe tener 5 dígitos', 'error');
-            return false;
-        }
-
-        return true;
     }
 
     animateInputs() {
@@ -122,9 +83,9 @@ class RegistrationManager {
     }
 }
 
-let registrationManager;
+let loginManager;
 document.addEventListener('DOMContentLoaded', () => {
-    registrationManager = new RegistrationManager();
+    loginManager = new LoginManager();
     window.togglePassword = (inputId) => {
         const input = document.getElementById(inputId);
         input.type = input.type === 'password' ? 'text' : 'password';

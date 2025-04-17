@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (loginButton) {
         loginButton.addEventListener('click', function() {
-            window.location.href = 'login.php';
+            window.location.href = 'login.html';
         });
     }
 });
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (loginButton) {
         loginButton.addEventListener('click', function() {
-            window.location.href = 'registration.php';
+            window.location.href = 'registration.html';
         });
     }
 });

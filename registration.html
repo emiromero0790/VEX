@@ -1,46 +1,3 @@
-<?php
-session_start();
-include 'conexion.php';
-
-$error = "";
-$success = "";
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    try {
-        $nombre = trim($_POST['nombre']);
-        $apellidos = trim($_POST['apellidos']);
-        $correo = trim($_POST['correo']);
-        $contrasena = trim($_POST['contrasena']);
-        $telefono = trim($_POST['telefono']);
-        $estado = trim($_POST['estado']);
-        $ciudad = trim($_POST['ciudad']);
-        $colonia = trim($_POST['colonia']);
-        $numero_exterior = trim($_POST['numero_exterior']);
-        $numero_interior = trim($_POST['numero_interior'] ?? null);
-        $codigo_postal = trim($_POST['codigo_postal']);
-
-        $stmt = $conn->prepare("SELECT correo FROM usuarios WHERE correo = ?");
-        $stmt->execute([$correo]);
-        if ($stmt->rowCount() > 0) {
-            $error = "Este correo electrónico ya está registrado";
-        } else {
-            $contrasena_sha1 = sha1($contrasena);
-            
-            $sql = "INSERT INTO usuarios (nombre, apellidos, correo, contrasena, telefono, estado, ciudad, colonia, numero_exterior, numero_interior, codigo_postal) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            
-            $stmt = $conn->prepare($sql);
-            $stmt->execute([$nombre, $apellidos, $correo, $contrasena_sha1, $telefono, $estado, $ciudad, $colonia, $numero_exterior, $numero_interior, $codigo_postal]);
-            
-            $success = "Registro exitoso. Redirigiendo al login...";
-            header("refresh:2;url=login.php");
-        }
-    } catch(PDOException $e) {
-        $error = "Error al registrar: " . $e->getMessage();
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -73,15 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1>Crear cuenta</h1>
                 <p class="subtitle">Completa tus datos para registrarte</p>
 
-                <?php if ($error): ?>
-                    <div class="error-message"><?php echo $error; ?></div>
-                <?php endif; ?>
+                <div id="error-message" class="error-message" style="display: none;"></div>
+                <div id="success-message" class="success-message" style="display: none;"></div>
 
-                <?php if ($success): ?>
-                    <div class="success-message"><?php echo $success; ?></div>
-                <?php endif; ?>
-
-                <form id="registrationForm" class="registration-form" method="POST" onsubmit="return validateForm()">
+                <form id="registrationForm" class="registration-form">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <div class="input-container">
@@ -189,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </form>
 
                 <p class="signup-text">
-                    ¿Ya tienes una cuenta? <a href="login.php" class="signup-link">Iniciar sesión</a>
+                    ¿Ya tienes una cuenta? <a href="login.html" class="signup-link">Iniciar sesión</a>
                 </p>
             </div>
         </div>
