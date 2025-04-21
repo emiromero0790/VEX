@@ -192,6 +192,8 @@
     border-radius: 8px 0 0 8px;
 }
 
+
+
 .projects-showcase {
     width: 100%;
     background: #000;
@@ -642,9 +644,45 @@
     background: var(--azul);
 }
 
+.specs-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 40px;
+    background: #0A192F; 
+}
+
+.specs-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; 
+    height: 500px;
+    background: radial-gradient(circle at center,
+        #8E2DE2 0%,
+        #4A00E0 30%,
+        #FF8008 60%,
+        #219BEF 100%
+    );
+    border-radius: 50%;
+    opacity: 0.8;
+    filter: blur(60px);
+    z-index: 1;
+}
+
 .showcase-specs {
+    position: relative;
+    z-index: 2;
     width: 100%;
     text-align: center;
+}
+
+.showcase-specs h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .specs-grid {
@@ -661,27 +699,57 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .spec-item:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .spec-item img {
     width: 60px;
     height: 60px;
     margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .spec-item h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: var(--azul-claro);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .spec-item p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .specs-section {
+        padding: 60px 20px;
+    }
+
+    .specs-section::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .showcase-specs h2 {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -711,14 +779,6 @@
 }
 
 @media (max-width: 768px) {
-    .showcase-content h2 {
-        font-size: 2.5rem;
-    }
-
-    .specs-grid {
-        grid-template-columns: 1fr;
-    }
-
     .carousel-btn {
         width: 40px;
         height: 40px;
