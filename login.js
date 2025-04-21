@@ -35,8 +35,14 @@ class LoginManager {
             const result = await response.json();
             
             if (result.success) {
-                this.showNotification('Login exitoso', 'success');
-                window.location.href = 'index.html';
+                localStorage.setItem('user', JSON.stringify({
+                    nombre: result.user.nombre,
+                    correo: result.user.correo,
+                    isLoggedIn: true
+                }));
+                
+                const previousPage = document.referrer || 'index.html';
+                window.location.href = previousPage;
             } else {
                 this.showNotification(result.message || 'Error al iniciar sesión', 'error');
             }
