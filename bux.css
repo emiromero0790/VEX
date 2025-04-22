@@ -24,7 +24,6 @@ body {
     background-color: var(--blanco);
 }
 
-/* Header Styles */
 .nav-container {
     display: flex;
     justify-content: space-between;
