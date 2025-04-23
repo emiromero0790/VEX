@@ -134,6 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (showcaseNext) showcaseNext.addEventListener('click', nextShowcaseSlide);
         if (showcasePrev) showcasePrev.addEventListener('click', prevShowcaseSlide);
 
-        setInterval(nextShowcaseSlide, 5000);
+        setInterval(nextShowcaseSlide, 9000);
     }
 });
