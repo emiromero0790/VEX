@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Manejo de miniaturas
     const thumbnails = document.querySelectorAll('.thumbnail');
     const mainImage = document.getElementById('mainImage');
     let currentImageIndex = 0;
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Zoom en la imagen principal
     const mainImageContainer = document.querySelector('.main-image');
     mainImageContainer.addEventListener('mousemove', (e) => {
         const bounds = mainImageContainer.getBoundingClientRect();
@@ -38,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         mainImage.style.transform = 'scale(1) translate(0, 0)';
     });
 
-    // Manejo de variantes
     const variantButtons = document.querySelectorAll('.variant-btn');
     const buyButton = document.querySelector('.buy-button');
     const prices = ['$1,999.00', '$2,999.00', '$3,999.00'];
@@ -51,10 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Inicializar el precio inicial
     buyButton.textContent = `Comprar ahora - ${prices[0]}`;
 
-    // Animación de entrada para los elementos
     const elements = document.querySelectorAll('.product-info > *');
     elements.forEach((element, index) => {
         element.style.opacity = '0';

@@ -443,7 +443,7 @@ h1 {
     font-weight: 500;
 }
 
-/* Product Details Section */
+
 .product-details {
     max-width: 1200px;
     margin: 60px auto;
@@ -497,7 +497,7 @@ h1 {
     box-shadow: var(--sombra-media);
 }
 
-/* Footer Styles */
+
 .footer {
     background: var(--negro);
     color: var(--blanco);

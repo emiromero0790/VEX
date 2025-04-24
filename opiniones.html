@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX - Opiniones</title>
+    <link rel="stylesheet" href="opiniones.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/v3333_3.png" alt="VEX Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="login.html" id="loginBtn">Iniciar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="feedback-container">
+        <div class="page-header">
+            <h1>Tu opinión nos ayuda a mejorar</h1>
+            <p class="subtitle">Valoramos cada comentario para brindarte un mejor servicio</p>
+        </div>
+        
+        <div class="rating-section">
+            <h2>¿Cómo ha sido tu experiencia?</h2>
+            <div class="stars-container">
+                <div class="stars">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <p class="rating-text">Selecciona una calificación</p>
+            </div>
+        </div>
+
+        <form id="feedbackForm" class="feedback-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="feedbackType">Tipo de Feedback</label>
+                    <select id="feedbackType" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="opinion">Opinión General</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="queja">Queja</option>
+                        <option value="mejora">Propuesta de Mejora</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackTitle">Título</label>
+                    <input type="text" id="feedbackTitle" placeholder="Resume tu experiencia en pocas palabras" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="feedbackMessage">Tu mensaje</label>
+                <textarea id="feedbackMessage" placeholder="Cuéntanos más sobre tu experiencia..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="feedbackImages" class="file-upload-label">
+                    <span>Añadir imágenes (opcional)</span>
+                    <small>Arrastra tus imágenes aquí o haz clic para seleccionar</small>
+                </label>
+                <input type="file" id="feedbackImages" accept="image/*" multiple class="file-upload-input">
+                <div id="imagePreview" class="image-preview"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Enviar Feedback</span>
+                <div class="submit-btn-bg"></div>
+            </button>
+        </form>
+
+        <section class="recent-feedback">
+            <div class="section-header">
+                <h2>Opiniones Recientes</h2>
+                <div class="feedback-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="opinion">Opiniones</button>
+                    <button class="filter-btn" data-filter="sugerencia">Sugerencias</button>
+                    <button class="filter-btn" data-filter="queja">Quejas</button>
+                </div>
+            </div>
+            <div id="feedbackList" class="feedback-list"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Atención a clientes</h3>
+                <ul>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@vex.com</p>
+                <p>Tel: (55) 1234-5678</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VEX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="opiniones.js"></script>
+</body>
+</html>
