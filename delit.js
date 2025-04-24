@@ -1,34 +1,69 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Image Gallery Functionality
     const mainImage = document.getElementById('mainImage');
+    const mainImageContainer = document.querySelector('.main-image');
     const thumbnails = document.querySelectorAll('.thumbnail');
+    let isZoomed = false;
     
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
-            // Update main image
+
             mainImage.src = this.src;
             mainImage.alt = this.alt;
             
-            // Update active thumbnail
+
             thumbnails.forEach(thumb => thumb.classList.remove('active'));
             this.classList.add('active');
             
-            // Add zoom effect to main image
-            mainImage.style.transform = 'scale(1.02)';
-            setTimeout(() => {
-                mainImage.style.transform = 'scale(1)';
-            }, 200);
+
+            if (isZoomed) {
+                toggleZoom();
+            }
         });
     });
 
-    // Plan Selection
+
+    function toggleZoom(e) {
+        isZoomed = !isZoomed;
+        mainImageContainer.classList.toggle('zoomed');
+        
+        if (isZoomed && e) {
+            updateZoomPosition(e);
+        } else {
+            mainImage.style.transform = 'scale(1)';
+        }
+    }
+
+    function updateZoomPosition(e) {
+        const rect = mainImageContainer.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width * 100;
+        const y = (e.clientY - rect.top) / rect.height * 100;
+        
+        mainImage.style.transform = 'scale(2.5)';
+        mainImage.style.transformOrigin = `${x}% ${y}%`;
+    }
+
+    mainImageContainer.addEventListener('click', toggleZoom);
+    
+    mainImageContainer.addEventListener('mousemove', (e) => {
+        if (isZoomed) {
+            updateZoomPosition(e);
+        }
+    });
+
+    mainImageContainer.addEventListener('mouseleave', () => {
+        if (isZoomed) {
+            toggleZoom();
+        }
+    });
+
+
     const planButtons = document.querySelectorAll('.select-plan-btn');
     planButtons.forEach(button => {
         button.addEventListener('click', function() {
             const plan = this.parentElement.querySelector('h4').textContent;
             const price = this.parentElement.querySelector('.price').textContent;
             
-            // Animate button
+
             this.classList.add('clicked');
             setTimeout(() => {
                 this.classList.remove('clicked');
@@ -37,19 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Custom Design Request
+
     const customDesignBtn = document.querySelector('.custom-design-btn');
     customDesignBtn.addEventListener('click', function() {
-        // Add click animation
+
         this.style.transform = 'scale(0.95)';
         setTimeout(() => {
             this.style.transform = 'scale(1)';
-            // Here you would typically open a modal or redirect to a form
             alert('Próximamente podrás solicitar tu diseño personalizado');
         }, 200);
     });
 
-    // Smooth Scroll
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -63,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Intersection Observer for animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -74,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
 
-    // Observe elements
-    document.querySelectorAll('.feature, .option-card, .showcase-item').forEach(el => {
+
+    document.querySelectorAll('.feature, .option-card, .showcase-item, .nfc-section').forEach(el => {
         observer.observe(el);
     });
 });
