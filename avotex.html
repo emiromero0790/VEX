@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AvoTex - Detección Inteligente de Enfermedades en Aguacates</title>
     <link rel="stylesheet" href="avotex.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="icon" type="image/png" href="images/vex logo final2.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,6 +20,7 @@
                 <a href="#demo">Demo</a>
                 <a href="#pricing">Precios</a>
                 <a href="#contact" class="contact-btn">Contacto</a>
+                <a href="cart.html" class="cart-icon">🛒 Carrito (0)</a>
             </div>
         </div>
     </nav>
@@ -25,7 +28,7 @@
     <section class="hero">
         <div class="hero-content">
             <img src="images/AvotexLogo.png" alt="AvoTex Logo" class="avotex-logo">
-            <h1 class="animate-text">Protege tus Cultivos con Inteligencia Artificial</h1>
+            <h1 class="animate-text">PROTEGE TUS CULTIVOS CON IA</h1>
             <p class="animate-text-delay">Detecta enfermedades y plagas en tus aguacates al instante utilizando tecnología de vanguardia</p>
             <div class="hero-buttons animate-text-delay">
                 <a href="#demo" class="primary-btn">Ver Demo</a>
@@ -33,10 +36,10 @@
             </div>
         </div>
         <div class="hero-image animate-fade-in">
-            <img src="images/avocado-2115922.jpg" alt="Aguacate Saludable">
+            <img src="images/Inteligencia-artificial-¿como-revolucionara-la-cosecha-de-aguacates_-1024x730.jpg" alt="Aguacate Saludable">
         </div>
     </section>
-
+    <img src="images/BienvenidaAvotex.png" alt="" width="100%">
     <section id="features" class="features">
         <h2>Características Principales</h2>
         <div class="features-grid">
@@ -178,7 +181,7 @@
                     <li>Soporte por email</li>
                     <li>Actualizaciones de la app</li>
                 </ul>
-                <button class="buy-btn">Comenzar</button>
+                <button onclick="addToCart('avotex-basic', 'Plan Básico', 999, 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn">Seleccionar Plan</button>
             </div>
             <div class="pricing-card featured">
                 <div class="featured-tag">Más Popular</div>
@@ -191,7 +194,7 @@
                     <li>Reportes avanzados</li>
                     <li>Acceso a nuevas características</li>
                 </ul>
-                <button class="buy-btn primary">Comenzar</button>
+                <button onclick="addToCart('avotex-pro', 'Plan Pro', 1999, 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn primary">Seleccionar Plan</button>
             </div>
             <div class="pricing-card">
                 <h3>Plan Empresarial</h3>
@@ -205,9 +208,7 @@
                 <button class="buy-btn">Contactar</button>
             </div>
         </div>
-    </section>
-
-    <section id="stats" class="stats">
+            <section id="stats" class="stats">
         <div class="stats-container">
             <div class="stat-item">
                 <div class="stat-number" data-target="95">0</div>
@@ -222,6 +223,7 @@
                 <div class="stat-label">Enfermedades Detectadas</div>
             </div>
         </div>
+    </section>
     </section>
 
     <section id="contact" class="contact">
@@ -241,8 +243,7 @@
                 <button type="submit" class="submit-btn">Enviar Mensaje</button>
             </form>
         </div>
-    </section>
-    
+    </section>   
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -263,9 +264,7 @@
             <p>&copy; 2024 VEX. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    
-
+    <script src="cart.js"></script>
     <script src="avotex.js"></script>
 </body>
 </html>

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VEX - DELIT</title>
     <link rel="stylesheet" href="delit.css">
+    <link rel="stylesheet" href="cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="nav-container">
-            <a href="index.html">
+            <a href="index.html" class="logo-link">
                 <img src="images/v3333_3.png" alt="VEX Logo" class="logo">
             </a>
             <div class="nav-links">
@@ -71,7 +72,7 @@
                                 <li>✓ Reemplazo por daños</li>
                                 <li>✓ Soporte técnico 24/7</li>
                             </ul>
-                            <button class="select-plan-btn">Seleccionar Plan</button>
+                            <button class="select-plan-btn" onclick="addToCart('delit-standard', 'Plan Estándar', 999, 'DELIT', 'images/IMG_7531.jpg')">Seleccionar Plan</button>
                         </div>
                         <div class="option-card">
                             <h4>Compra Única</h4>
@@ -82,7 +83,7 @@
                                 <li>✓ Instalación incluida</li>
                                 <li>✓ Soporte técnico básico</li>
                             </ul>
-                            <button class="select-plan-btn">Comprar Ahora</button>
+                            <button class="select-plan-btn" onclick="addToCart('delit-single', 'Compra Única', 2999, 'DELIT', 'images/IMG_7531.jpg')">Comprar Ahora</button>
                         </div>
                     </div>
                 </div>
@@ -175,6 +176,7 @@
         </div>
     </footer>
 
+    <script src="cart.js"></script>
     <script src="delit.js"></script>
 </body>
 </html>

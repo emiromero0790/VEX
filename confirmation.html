@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra - VEX</title>
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        .confirmation-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            background: var(--blanco);
+            border-radius: 20px;
+            box-shadow: var(--sombra-media);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-title {
+            color: var(--azul);
+            margin-bottom: 20px;
+        }
+
+        .confirmation-message {
+            color: var(--gris-oscuro);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .order-number {
+            background: var(--azul-extra-claro);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: var(--azul);
+        }
+
+        .back-home {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--azul);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: var(--transicion);
+        }
+
+        .back-home:hover {
+            background: var(--azul-oscuro);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="success-icon">✓</div>
+        <h1 class="confirmation-title">¡Gracias por tu compra!</h1>
+        <p class="confirmation-message">
+            Tu pedido ha sido procesado con éxito. Recibirás un correo electrónico con los detalles de tu compra.
+        </p>
+        <div class="order-number">
+            Número de Orden: #${Math.random().toString(36).substr(2, 9).toUpperCase()}
+        </div>
+        <a href="index.html" class="back-home">Volver al Inicio</a>
+    </div>
+</body>
+</html>
