@@ -1,0 +1,346 @@
+:root {
+    --azul: #219BEF;
+    --azul-oscuro: #176BAA;
+    --azul-claro: #61B7F1;
+    --azul-hover: #1a7cc0;
+    --azul-extra-claro: #EBF6FF;
+    --negro: #000000;
+    --gris-claro: #f5f5f5;
+    --gris-oscuro: #333333;
+    --blanco: #ffffff;
+    --sombra-suave: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --transicion: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+    background: var(--blanco);
+    min-height: 100vh;
+    color: var(--negro);
+    line-height: 1.6;
+}
+
+.listado{
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.listado img{
+    width: 50%;
+}
+
+.nav-container {
+    background: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--sombra-suave);
+}
+
+.logo {
+    height: 40px;
+    transition: var(--transicion);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transicion);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.nav-links a:hover {
+    background: var(--azul-extra-claro);
+    color: var(--azul);
+}
+
+.billing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.billing-hero {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.billing-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--azul);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--gris-oscuro);
+}
+
+.billing-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.billing-form-container {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--sombra-media);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    color: var(--azul);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: var(--gris-oscuro);
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: var(--gris-claro);
+    border-radius: 15px;
+}
+
+.form-section h3 {
+    color: var(--azul);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group.floating {
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 15px;
+}
+
+.form-group.floating input {
+    width: 100%;
+    padding: 15px;
+    background: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 10px;
+    color: var(--negro);
+    font-size: 1rem;
+    transition: var(--transicion);
+}
+
+.form-group.floating label {
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    color: var(--gris-oscuro);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: transparent;
+    padding: 0 5px;
+}
+
+.form-group.floating input:focus + label,
+.form-group.floating input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 0.85rem;
+    color: var(--azul);
+    background: var(--blanco);
+}
+
+.form-group.floating input:focus,
+.form-group.floating input:not(:placeholder-shown) {
+    border-color: var(--azul);
+}
+
+.form-group.floating input::placeholder {
+    color: transparent;
+}
+
+.form-group.error input {
+    border-color: #ff4444;
+}
+
+.form-group.error label {
+    color: #ff4444;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    position: absolute;
+    bottom: -20px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--azul);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transicion);
+}
+
+.submit-btn:hover {
+    background: var(--azul-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.billing-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-card {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-media);
+    transition: var(--transicion);
+    border: 2px solid var(--gris-claro);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--azul);
+}
+
+.info-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--azul);
+}
+
+.info-card h3 {
+    color: var(--azul);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.info-card p, .info-card ul {
+    color: var(--gris-oscuro);
+}
+
+.info-card ul {
+    list-style-position: inside;
+    margin-left: 0;
+}
+
+.info-card li {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background: var(--negro);
+    padding: 60px 20px 30px;
+    margin-top: 80px;
+    color: var(--blanco);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: var(--azul-claro);
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 992px) {
+    .billing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    .billing-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .billing-hero h1 {
+        font-size: 2rem;
+    }
+
+    .billing-form-container {
+        padding: 20px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX - Facturación</title>
+    <link rel="stylesheet" href="facturacion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/vex logo final2.png">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="index.html">
+                <img src="images/v3333_3.png" alt="VEX Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="cart.html" class="cart-icon">🛒 Carrito (0)</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="billing-container">
+        <div class="billing-hero">
+            <h1>Facturación</h1>
+            <p class="subtitle">Genera tus facturas de manera rápida y sencilla</p>
+        </div>
+        <div class="listado">
+            <img src="images/Productos.png" alt="Productos">
+        </div>
+        <div class="billing-grid">
+            <div class="billing-form-container">
+                <div class="form-header">
+                    <h2>Datos de Facturación</h2>
+                    <p>Completa los campos para generar tu factura</p>
+                </div>
+
+                <form id="billingForm">
+                    <div class="form-section">
+                        <h3>Datos Fiscales</h3>
+                        <div class="form-group floating">
+                            <input type="text" id="rfc" required placeholder=" ">
+                            <label for="rfc">RFC</label>
+                        </div>
+                        
+                        <div class="form-group floating">
+                            <input type="text" id="razon_social" required placeholder=" ">
+                            <label for="razon_social">Razón Social</label>
+                        </div>
+
+                        <div class="form-group floating">
+                            <input type="text" id="regimen_fiscal" required placeholder=" ">
+                            <label for="regimen_fiscal">Régimen Fiscal</label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Dirección Fiscal</h3>
+                        <div class="form-group floating">
+                            <input type="text" id="calle" required placeholder=" ">
+                            <label for="calle">Calle</label>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="num_exterior" required placeholder=" ">
+                                <label for="num_exterior">Número Exterior</label>
+                            </div>
+
+                            <div class="form-group floating">
+                                <input type="text" id="num_interior" placeholder=" ">
+                                <label for="num_interior">Número Interior</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group floating">
+                            <input type="text" id="colonia" required placeholder=" ">
+                            <label for="colonia">Colonia</label>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="municipio" required placeholder=" ">
+                                <label for="municipio">Municipio</label>
+                            </div>
+
+                            <div class="form-group floating">
+                                <input type="text" id="estado" required placeholder=" ">
+                                <label for="estado">Estado</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group floating">
+                            <input type="text" id="cp" required placeholder=" ">
+                            <label for="cp">Código Postal</label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Datos de Contacto</h3>
+                        <div class="form-group floating">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Correo Electrónico</label>
+                        </div>
+
+                        <div class="form-group floating">
+                            <input type="tel" id="telefono" required placeholder=" ">
+                            <label for="telefono">Teléfono</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Generar Factura</span>
+                        <div class="btn-animation"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div class="billing-info">
+                <div class="info-card">
+                    <div class="info-icon">📋</div>
+                    <h3>Documentos Necesarios</h3>
+                    <ul>
+                        <li>RFC actualizado</li>
+                        <li>Comprobante de domicilio</li>
+                        <li>Identificación oficial</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">ℹ️</div>
+                    <h3>Información Importante</h3>
+                    <p>Las facturas se generarán en formato XML y PDF, y serán enviadas al correo electrónico proporcionado.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">⏱️</div>
+                    <h3>Tiempo de Proceso</h3>
+                    <p>Las facturas se generan de manera inmediata y son enviadas en un plazo máximo de 24 horas.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@vex.com</p>
+                <p>Tel: (55) 1234-5678</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VEX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="facturacion.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

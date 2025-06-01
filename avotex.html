@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="cart.css">
     <link rel="icon" type="image/png" href="images/vex logo final2.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- <script>
+  let scrollSpeed = 1;        // pixeles por paso
+  let intervalDelay = 10;     // milisegundos entre pasos
+  let pauseTime = 1000;       // pausa al llegar arriba o abajo (en ms)
+
+  let direction = "down";     // direccion actual
+
+  function autoScroll() {
+    const scrollStep = direction === "down" ? scrollSpeed : -scrollSpeed;
+    const scrollInterval = setInterval(() => {
+      window.scrollBy(0, scrollStep);
+
+      if (direction === "down" && (window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        clearInterval(scrollInterval);
+        direction = "up";
+        setTimeout(autoScroll, pauseTime);
+      }
+
+      if (direction === "up" && window.scrollY <= 0) {
+        clearInterval(scrollInterval);
+        direction = "down";
+        setTimeout(autoScroll, pauseTime);
+      }
+    }, intervalDelay);
+  }
+
+  window.onload = autoScroll;
+</script> -->
+
+
 </head>
 <body>
     <nav class="navbar">
@@ -35,9 +65,11 @@
                 <a href="#pricing" class="secondary-btn">Planes y Precios</a>
             </div>
         </div>
-        <div class="hero-image animate-fade-in">
-            <img src="images/Inteligencia-artificial-¿como-revolucionara-la-cosecha-de-aguacates_-1024x730.jpg" alt="Aguacate Saludable">
-        </div>
+            <div class="showcase-media">
+                <video autoplay loop muted playsinline class="feature-video">
+                    <source src="images/Avotex animacion.mp4" type="video/mp4">
+                </video>
+            </div>
     </section>
     <img src="images/BienvenidaAvotex.png" alt="" width="100%">
     <section id="features" class="features">
@@ -60,8 +92,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📱</div>
-                <h3>Uso Offline</h3>
-                <p>Funciona sin conexión a internet en tu huerta.</p>
+                <h3>App</h3>
+                <p>Disponible en tabletas.</p>
             </div>
         </div>
     </section>
@@ -174,19 +206,19 @@
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Plan Básico</h3>
-                <div class="price">$999<span>/mes</span></div>
+                <div class="price">$1999<span>/semestre</span></div>
                 <ul class="features-list">
                     <li>Hasta 1000 escaneos mensuales</li>
                     <li>Detección de 5 enfermedades comunes</li>
                     <li>Soporte por email</li>
                     <li>Actualizaciones de la app</li>
                 </ul>
-                <button onclick="addToCart('avotex-basic', 'Plan Básico', 999, 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn">Seleccionar Plan</button>
+                <button onclick="addToCart('avotex-basic', 'Plan Básico', 6000, 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn">Seleccionar Plan</button>
             </div>
             <div class="pricing-card featured">
                 <div class="featured-tag">Más Popular</div>
                 <h3>Plan Pro</h3>
-                <div class="price">$1,999<span>/mes</span></div>
+                <div class="price">$6000<span>/semestre</span></div>
                 <ul class="features-list">
                     <li>Escaneos ilimitados</li>
                     <li>Detección de todas las enfermedades</li>
@@ -194,7 +226,7 @@
                     <li>Reportes avanzados</li>
                     <li>Acceso a nuevas características</li>
                 </ul>
-                <button onclick="addToCart('avotex-pro', 'Plan Pro', 1999, 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn primary">Seleccionar Plan</button>
+                <button onclick="addToCart('avotex-pro', 'Plan Pro', 1999, 'AvoTex', 'images/PLAN PRO.jpg')" class="buy-btn primary">Seleccionar Plan</button>
             </div>
             <div class="pricing-card">
                 <h3>Plan Empresarial</h3>
@@ -244,26 +276,31 @@
             </form>
         </div>
     </section>   
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Atención a clientes</h3>
-                <ul>
-                    <li><a href="#">Centro de ayuda</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Política de privacidad</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p>Email: info@vex.com</p>
-                <p>Tel: (55) 1234-5678</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 VEX. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<footer class="footer2">
+  <div class="footer-overlay"></div> 
+  
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Contacto</h3>
+      <p>Tel: (123) 456 7890</p>
+      <p>Email: info@vex.com</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contrata ahora</h3>
+      <p>Plan Básico</p>
+      <p>Plan Pro</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Redes Sociales</h3>
+      <p>Facebook / Instagram / X</p>
+    </div>
+  </div>
+
+  <p class="footer-copy">&copy; 2024 VEX. Todos los derechos reservados.</p>
+</footer>
+
     <script src="cart.js"></script>
     <script src="avotex.js"></script>
 </body>

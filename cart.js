@@ -1,4 +1,4 @@
-// Shopping Cart Class
+
 class ShoppingCart {
     constructor() {
         this.items = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -7,7 +7,6 @@ class ShoppingCart {
         if (window.location.pathname.includes('cart.html')) {
             this.renderCartPage();
             this.setupCheckoutForm();
-            this.initializePayPal();
             this.setupQuantityControls();
             this.setupRemoveButtons();
         }
@@ -62,8 +61,6 @@ class ShoppingCart {
             this.updateCartIcon();
             if (window.location.pathname.includes('cart.html')) {
                 this.renderCartPage();
-                this.setupQuantityControls();
-                this.setupRemoveButtons();
             }
         }
     }
@@ -79,8 +76,6 @@ class ShoppingCart {
                 this.updateCartIcon();
                 if (window.location.pathname.includes('cart.html')) {
                     this.renderCartPage();
-                    this.setupQuantityControls();
-                    this.setupRemoveButtons();
                 }
             }
         }
@@ -105,7 +100,11 @@ class ShoppingCart {
     initializePayPal() {
         if (this.items.length === 0) return;
 
-        const total = this.calculateTotal() + 99; // Including shipping
+        const total = this.calculateTotal() + 99; 
+        const paypalContainer = document.getElementById('paypal-button-container');
+        
+
+        paypalContainer.innerHTML = '';
 
         paypal.Buttons({
             createOrder: (data, actions) => {
@@ -121,7 +120,6 @@ class ShoppingCart {
             },
             onApprove: (data, actions) => {
                 return actions.order.capture().then((details) => {
-                    // Clear cart and show success message
                     localStorage.removeItem('cartItems');
                     window.location.href = 'confirmation.html';
                 });
@@ -190,8 +188,10 @@ class ShoppingCart {
 
         cartSummary.style.display = 'block';
         
-        // Initialize PayPal buttons after rendering summary
+
         this.initializePayPal();
+        this.setupQuantityControls();
+        this.setupRemoveButtons();
     }
 
     setupCheckoutForm() {
@@ -204,14 +204,14 @@ class ShoppingCart {
     processCheckout(e) {
         e.preventDefault();
         
-        // Validate form
+
         const form = e.target;
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
         }
 
-        // Clear cart and redirect to confirmation
+
         localStorage.removeItem('cartItems');
         window.location.href = 'confirmation.html';
     }
@@ -233,15 +233,15 @@ class ShoppingCart {
     }
 }
 
-// Initialize cart
+
 const cart = new ShoppingCart();
 
-// Function to add items to cart
+
 function addToCart(id, name, price, product, image) {
     cart.addItem(id, name, price, product, image);
 }
 
-// Add styles for notification
+
 const style = document.createElement('style');
 style.textContent = `
     .cart-notification {
