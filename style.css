@@ -2172,5 +2172,101 @@ header {
         transform: translateY(-4px); 
     }
 
+        .showcase-section {
+        flex-direction: column;  /* Cambia a layout vertical */
+        padding: 40px 20px;
+        min-height: auto;
+        gap: 20px;
+    }
+
+    .showcase-content,
+    .showcase-content2,
+    .showcase-media,
+    .showcase-media2 {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .showcase-media2 {
+        margin-right: 0;
+    }
+
+    .showcase-content h2,
+    .showcase-content2 h2 {
+        font-size: 6.5vw; /* Escalable: ~26px en 400px */
+        text-align: center;
+    }
+
+    .showcase-content p,
+    .showcase-content2 p {
+        font-size: 4.5vw; /* ~18px en 400px */
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .showcase-btn {
+        font-size: 4.5vw;
+        padding: 10px 20px;
+        display: block;
+        margin: 20px auto 0;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .feature-video {
+        margin-top: 0;
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .diagonal-overlay,
+    .diagonal-overlay.reverse,
+    .diagonal-overlay2 {
+        display: none; 
+    }
+
+.specs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 20px auto;
+        padding: 0 8px;
+        max-width: 100%;
+    }
+
+    .spec-item {
+        padding: 3vw;
+        border-radius: 2.5vw;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .spec-item img {
+        width: 14vw;
+        height: 14vw;
+        margin-bottom: 1vw;
+    }
+
+    .spec-item h3 {
+        font-size: 2.6vw;
+        margin-bottom: 0.5vw;
+        text-align: center;
+    }
+
+    .spec-item p {
+        font-size: 2.3vw;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .showcase-specs h2 {
+        font-size: 5.5vw;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+
 }
 
