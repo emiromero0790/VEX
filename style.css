@@ -2319,6 +2319,15 @@ header {
     }
 }
 
+@media screen and (min-height: 850px) and (max-height:899px) {
+    .compraVex {
+    color: white;
+    background-color: #000000;
+    text-align: center;
+    margin-top: -135%;
+    }
+}
+
 @media screen and (min-height: 900px) and (max-height:920px) {
     .compraVex {
     color: white;
