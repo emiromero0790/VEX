@@ -2038,6 +2038,11 @@ header {
 .envios div p{
     font-size: 1.5vw;
 }
+
+.fixed-button{
+    font-size: 2vw;
+    height: 15%; 
+}
     
 
 }
