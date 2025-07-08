@@ -1786,7 +1786,7 @@ header {
 }
 
 
-@media screen and (max-width: 480px) and (pointer: coarse) {
+@media screen and (max-device-width: 480px) {
     .nav-container {
         display: flex;
         align-items: center;
@@ -2268,7 +2268,7 @@ header {
 
 }
 
-@media screen and (min-height: 600px) and (max-height: 700px) and (pointer: coarse) {
+@media screen and (min-device-height: 600px) and (max-device-height: 700px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2278,7 +2278,7 @@ header {
     }
 }
 
-@media screen and (min-height: 700px) and (max-height: 750px) and (pointer: coarse) {
+@media screen and (min-device-height: 700px) and (max-device-height: 750px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2288,7 +2288,7 @@ header {
     }
 }
 
-@media screen and (min-height: 850px) and (max-height:900px) and (pointer: coarse) {
+@media screen and (min-device-height: 850px) and (max-device-height:900px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2296,7 +2296,7 @@ header {
     margin-top: -115%;
     }
 }
-@media screen and (min-height: 800px) and (max-height:825px) and (pointer: coarse) {
+@media screen and (min-device-height: 800px) and (max-device-height:825px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2305,7 +2305,7 @@ header {
     }
 }
 
-@media screen and (min-height: 830px) and (max-height:850px) and (pointer: coarse) {
+@media screen and (min-device-height: 830px) and (max-device-height:850px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2314,7 +2314,7 @@ header {
     }
 }
 
-@media screen and (min-height: 850px) and (max-height:899px) and (pointer: coarse) {
+@media screen and (min-device-height: 850px) and (max-device-height:899px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2323,7 +2323,7 @@ header {
     }
 }
 
-@media screen and (min-height: 900px) and (max-height:920px) and (pointer: coarse) {
+@media screen and (min-device-height: 900px) and (max-device-height:920px) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2332,7 +2332,7 @@ header {
     }
 }
 
-@media screen and (max-width: 420px) and (pointer: coarse){
+@media screen and (max-device-width: 420px){
     .item {
     width: 100px;
     height: 170px;
@@ -2373,7 +2373,7 @@ header {
 
 }
 
-@media screen and (max-width: 365px) and (pointer: coarse){
+@media screen and (max-device-width: 365px){
     .item {
     width: 90px;
     height: 160px;
