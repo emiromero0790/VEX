@@ -268,12 +268,9 @@
     font-size: 3.5rem;
     margin-bottom: 20px;
     font-weight: 700;
-  color: white; /* color del texto */
-  text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black; /* crea el borde negro */
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .showcase-content2 p {
@@ -293,10 +290,7 @@
     margin-right: -130px;
     width: 45%;
     z-index: 2;
-    
 }
-
-
 
 .feature-video {
     margin-top: -10%;
@@ -1791,7 +1785,8 @@ header {
     }
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 480px) and (pointer: coarse) {
     .nav-container {
         display: flex;
         align-items: center;
@@ -2173,7 +2168,7 @@ header {
     }
 
         .showcase-section {
-        flex-direction: column;  /* Cambia a layout vertical */
+        flex-direction: column; 
         padding: 40px 20px;
         min-height: auto;
         gap: 20px;
@@ -2194,13 +2189,13 @@ header {
 
     .showcase-content h2,
     .showcase-content2 h2 {
-        font-size: 6.5vw; /* Escalable: ~26px en 400px */
+        font-size: 6.5vw; 
         text-align: center;
     }
 
     .showcase-content p,
     .showcase-content2 p {
-        font-size: 4.5vw; /* ~18px en 400px */
+        font-size: 4.5vw;
         line-height: 1.5;
         text-align: center;
     }
@@ -2273,7 +2268,7 @@ header {
 
 }
 
-@media screen and (min-height: 600px) and (max-height: 700px) {
+@media screen and (min-height: 600px) and (max-height: 700px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2283,7 +2278,7 @@ header {
     }
 }
 
-@media screen and (min-height: 700px) and (max-height: 750px) {
+@media screen and (min-height: 700px) and (max-height: 750px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2293,7 +2288,7 @@ header {
     }
 }
 
-@media screen and (min-height: 850px) and (max-height:900px) {
+@media screen and (min-height: 850px) and (max-height:900px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2301,7 +2296,7 @@ header {
     margin-top: -115%;
     }
 }
-@media screen and (min-height: 800px) and (max-height:825px) {
+@media screen and (min-height: 800px) and (max-height:825px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2310,7 +2305,7 @@ header {
     }
 }
 
-@media screen and (min-height: 830px) and (max-height:850px) {
+@media screen and (min-height: 830px) and (max-height:850px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2319,16 +2314,16 @@ header {
     }
 }
 
-@media screen and (min-height: 850px) and (max-height:899px) {
+@media screen and (min-height: 850px) and (max-height:899px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
     text-align: center;
-    margin-top: -135%;
+    margin-top: -13%;
     }
 }
 
-@media screen and (min-height: 900px) and (max-height:920px) {
+@media screen and (min-height: 900px) and (max-height:920px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2337,7 +2332,7 @@ header {
     }
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 420px) and (pointer: coarse){
     .item {
     width: 100px;
     height: 170px;
@@ -2378,7 +2373,7 @@ header {
 
 }
 
-@media screen and (max-width: 365px){
+@media screen and (max-width: 365px) and (pointer: coarse){
     .item {
     width: 90px;
     height: 160px;
