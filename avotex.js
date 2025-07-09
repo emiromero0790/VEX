@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 
-
+    /*
     const heroImage = document.querySelector('.hero-image');
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
@@ -156,4 +156,5 @@ document.addEventListener('DOMContentLoaded', function() {
             heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
         }
     });
+    */
 });
