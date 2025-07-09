@@ -1498,7 +1498,7 @@ body {
     }
 }
 
-@media screen  and (min-device-height: 850px) and (max-device-height: 900px) {
+@media screen and (pointer: coarse) and (max-device-width: 480px) and (min-device-height: 850px) and (max-device-height: 950px) {
         html, body {
         overflow-x: hidden;
     }
@@ -1545,8 +1545,8 @@ body {
     }
 
     .gallery-main {
-        width: 85%;
-        height: 290px;
+        width: 95%;
+        height: 300px;
         border-radius: 15px;
         margin-bottom: 1rem;
         object-fit: cover;
@@ -1739,8 +1739,8 @@ body {
     }
 
     .thumb {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 10px;
         cursor: pointer;
         opacity: 0.6;
