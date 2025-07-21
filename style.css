@@ -1839,300 +1839,300 @@ h2 {
     height: 700px;
     overflow: hidden;
     margin-top: -15px;
-}
+    }
 
-.carousel {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
-}
+    .carousel {
+        display: flex;
+        width: 300%;
+        transition: transform 0.5s ease-in-out;
+    }
 
-.carousel-slide {
-    width: 33.333%;
-    height: 600px;
-}
+    .carousel-slide {
+        width: 33.333%;
+        height: 600px;
+    }
 
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--azul);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 2;
-    opacity: 0.9;
-}
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--azul);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 2;
+        opacity: 0.9;
+    }
 
-.carousel-button:hover {
-    background: #176BAA;
-    opacity: 1;
-}
+    .carousel-button:hover {
+        background: #176BAA;
+        opacity: 1;
+    }
 
-.prev {
-    left: 20px;
-    border-radius: 0 8px 8px 0;
-}
+    .prev {
+        left: 20px;
+        border-radius: 0 8px 8px 0;
+    }
 
-.next {
-    right: 20px;
-    border-radius: 8px 0 0 8px;
-}
-.carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 2;
-}
+    .next {
+        right: 20px;
+        border-radius: 8px 0 0 8px;
+    }
+    .carousel-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 2;
+    }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+    .dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-.dot.active {
-    background: white;
-}
+    .dot.active {
+        background: white;
+    }
 
-.carousel-content {
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: white;
-    max-width: 500px;
-    z-index: 2;
-}
+    .carousel-content {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: white;
+        max-width: 500px;
+        z-index: 2;
+    }
 
-.carousel-title {
-    font-size: 3vw;
-    margin-bottom: 2%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+    .carousel-title {
+        font-size: 3vw;
+        margin-bottom: 2%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.carousel-subtitle {
+    .carousel-subtitle {
+        font-size: 2.5vw;
+        margin-bottom: 2%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-text {
+        font-size: 2vw;
+        margin-bottom: 2%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2%;
+    }
+
+    .comprar1 {
+        background-color: var(--azul); 
+        color: white;
+        border: none;
+        padding: 2.5vw 5vw; 
+        font-size: 2.5vw;
+        font-weight: bold;
+        cursor: pointer;
+        text-shadow: none;
+        transition: background-color 0.3s ease;
+        height: auto;
+        border-radius: 3vw;
+    }
+
+    .conoce1 {
+        background-color: #000000; 
+        color: white;
+        border: none;
+        padding: 2.5vw 5vw;
+        font-size: 2.5vw;
+        font-weight: bold;
+        cursor: pointer;
+
+        margin-left: 3vw;
+        text-shadow: none;
+        transition: background-color 0.3s ease;
+        height: auto;
+        border-radius: 3vw;
+    }
+
+    .compraVex {
+        color: white;
+        background-color: #000000;
+        text-align: center;
+        margin-top: -110%;
+        height: 40px;
+        font-size: 2.5vw;
+    }
+
+    .envios {
+        background-color: #000000;
+        height: 15%;
+        width: 100%;
+        margin-top: -10px; 
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        gap: 5%; 
+    }
+
+    .envios div {
+        padding: 6px;
+        height: 81px;
+        width: 91px;
+        margin-left: 10px;
+        background-color: #ffffff;
+        transition: transform 0.3s ease; 
+        border-radius: 5px;
+    }
+
+    .envios div:hover {
+        transform: translateY(-10px); 
+    }
+
+    .enviostitulo {
+        color: #ffffff;
+        margin-left: 2.5vw;
+    }
+
+    .envios div h3{
+        font-size: 2vw;
+    }
+
+    .envios div img{
+        width: 15px;
+    }
+
+    .envios div p{
+        font-size: 1.5vw;
+    }
+
+    .fixed-button{
+        font-size: 2vw;
+        height: 15%; 
+    }
+    .base1 img{
+        width: 20px;
+        margin-top: 3px;
+    }
+
+    .base2 img{
+        width: 20px;
+        margin-top: -15px;
+    }
+
+    .base3 img{
+        width: 15px;
+        margin-top: 25px;
+    }
+
+    .base img{
+        width: 15px;
+    }
+
+    .base{
+        margin-top: 30px;
+    }
+
+    .basegris img{
+        width: 20px;
+        margin-top: 22px;
+    }
+
+    .base1 p{
+        font-size: 2.5vw;
+    }
+
+    .base2 p{
+        font-size: 2.5vw;
+    }
+
+    .base3 p{
+        font-size: 2.5vw;
+    }
+
+    .base p{
     font-size: 2.5vw;
-    margin-bottom: 2%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+    }
 
-.carousel-text {
-    font-size: 2vw;
-    margin-bottom: 2%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 2%;
-}
-
-.comprar1 {
-    background-color: var(--azul); 
-    color: white;
-    border: none;
-    padding: 2.5vw 5vw; 
+    .basegris p{
     font-size: 2.5vw;
-    font-weight: bold;
-    cursor: pointer;
-    text-shadow: none;
-    transition: background-color 0.3s ease;
-    height: auto;
-    border-radius: 3vw;
-}
+    }
 
-.conoce1 {
-    background-color: #000000; 
-    color: white;
-    border: none;
-    padding: 2.5vw 5vw;
-    font-size: 2.5vw;
-    font-weight: bold;
-    cursor: pointer;
+    .productos {
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+        margin-left: -15px;
+        height: 5%;
+        display: flex;
+        gap: 15px;
+    }
 
-    margin-left: 3vw;
-    text-shadow: none;
-    transition: background-color 0.3s ease;
-    height: auto;
-    border-radius: 3vw;
-}
+    .overlay-title2{
+        font-size: 5vw;
+        margin-top: 25%;
+        margin-bottom: 0px;
+    }
 
-.compraVex {
-    color: white;
-    background-color: #000000;
-    text-align: center;
-    margin-top: -110%;
-    height: 40px;
-    font-size: 2.5vw;
-}
+    .overlay-subtitle2{
+        font-size: 3vw;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 
-.envios {
-    background-color: #000000;
-    height: 15%;
-    width: 100%;
-    margin-top: -10px; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 5%; 
-}
+    .comprar{
+        font-size: 2.5vw;
+        height: 50px;
+        width: 100px;
+        margin-left: 1%;
+    }
 
-.envios div {
-    padding: 6px;
-    height: 81px;
-    width: 91px;
-    margin-left: 10px;
-    background-color: #ffffff;
-    transition: transform 0.3s ease; 
-    border-radius: 5px;
-}
+    .conoce{
+        font-size: 2.5vw;
+        height: 50px;
+        width: 100px;
+        margin-left: 1%;
 
-.envios div:hover {
-    transform: translateY(-10px); 
-}
+    }
 
-.enviostitulo {
-    color: #ffffff;
-    margin-left: 2.5vw;
-}
+    .container2{
+        gap: 3px;
+        height: 200px;
+        margin-top: 0px;
+    }
 
-.envios div h3{
-    font-size: 2vw;
-}
-
-.envios div img{
-    width: 15px;
-}
-
-.envios div p{
-    font-size: 1.5vw;
-}
-
-.fixed-button{
-    font-size: 2vw;
-    height: 15%; 
-}
-.base1 img{
-    width: 20px;
-    margin-top: 3px;
-}
-
-.base2 img{
-    width: 20px;
-    margin-top: -15px;
-}
-
-.base3 img{
-    width: 15px;
-    margin-top: 25px;
-}
-
-.base img{
-    width: 15px;
-}
-
-.base{
-    margin-top: 30px;
-}
-
-.basegris img{
-    width: 20px;
-    margin-top: 22px;
-}
-
-.base1 p{
-    font-size: 2.5vw;
-}
-
-.base2 p{
-    font-size: 2.5vw;
-}
-
-.base3 p{
-    font-size: 2.5vw;
-}
-
-.base p{
-   font-size: 2.5vw;
-}
-
-.basegris p{
-   font-size: 2.5vw;
-}
-
-.productos {
-    display: flex;
-    justify-content: center;
-    margin-top: 0px;
-    margin-left: -15px;
-    height: 5%;
-    display: flex;
-    gap: 15px;
-}
-
-.overlay-title2{
-    font-size: 5vw;
-    margin-top: 25%;
-    margin-bottom: 0px;
-}
-
-.overlay-subtitle2{
-    font-size: 3vw;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.comprar{
-    font-size: 2.5vw;
-    height: 50px;
-    width: 100px;
-    margin-left: 1%;
-}
-
-.conoce{
-    font-size: 2.5vw;
-    height: 50px;
-    width: 100px;
-    margin-left: 1%;
-
-}
-
-.container2{
-    gap: 3px;
-    height: 200px;
-    margin-top: 0px;
-}
-
-.item {
-    width: 120px;
-    height: 180px;
-    border-radius: 0.75rem;
-    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
+    .item {
+        width: 120px;
+        height: 180px;
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
 
     .item p{
         font-size: 1vw;
@@ -2217,7 +2217,7 @@ h2 {
         display: none; 
     }
 
-.specs-grid {
+    .specs-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
@@ -2264,7 +2264,7 @@ h2 {
 
 }
 
-@media screen and (min-device-height: 600px) and (max-device-height: 700px) {
+@media screen and (min-device-height: 600px) and (max-device-height: 700px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2274,7 +2274,7 @@ h2 {
     }
 }
 
-@media screen and (min-device-height: 700px) and (max-device-height: 750px) {
+@media screen and (min-device-height: 700px) and (max-device-height: 750px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2284,7 +2284,7 @@ h2 {
     }
 }
 
-@media screen and (min-device-height: 850px) and (max-device-height:900px) {
+@media screen and (min-device-height: 850px) and (max-device-height:900px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2292,7 +2292,8 @@ h2 {
     margin-top: -115%;
     }
 }
-@media screen and (min-device-height: 800px) and (max-device-height:825px) {
+
+@media screen and (min-device-height: 800px) and (max-device-height:825px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2301,7 +2302,7 @@ h2 {
     }
 }
 
-@media screen and (min-device-height: 830px) and (max-device-height:850px) {
+@media screen and (min-device-height: 830px) and (max-device-height:850px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2310,7 +2311,7 @@ h2 {
     }
 }
 
-@media screen and (min-device-height: 850px) and (max-device-height:899px) {
+@media screen and (min-device-height: 850px) and (max-device-height:899px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2319,7 +2320,7 @@ h2 {
     }
 }
 
-@media screen and (min-device-height: 900px) and (max-device-height:920px) {
+@media screen and (min-device-height: 900px) and (max-device-height:920px) and (pointer: coarse) {
     .compraVex {
     color: white;
     background-color: #000000;
@@ -2328,7 +2329,7 @@ h2 {
     }
 }
 
-@media screen and (max-device-width: 420px){
+@media screen and (max-device-width: 420px) and (pointer: coarse){
     .item {
     width: 100px;
     height: 170px;
@@ -2369,7 +2370,7 @@ h2 {
 
 }
 
-@media screen and (max-device-width: 365px){
+@media screen and (max-device-width: 365px) and (pointer: coarse){
     .item {
     width: 90px;
     height: 160px;
