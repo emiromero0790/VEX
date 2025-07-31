@@ -1166,6 +1166,22 @@ body {
     .submit-btn:hover {
         background: var(--primary-dark);
     }
+
+    .instagram{
+        background-color: white;
+        margin-bottom: 0px;
+    }
+
+    .instagram img{
+        height: 50px;
+    }
+
+    .instagram a{
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
+        font-size: 15px;
+    }
 }
 
 @media screen  and (min-device-height: 650px) and (max-device-height: 700px) {
