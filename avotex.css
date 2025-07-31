@@ -24,14 +24,14 @@
 
 .instagram{
     background-color: white;
-    margin-bottom: -30px;
+    margin-bottom: -45px;
 }
 
 .instagram a{
     display: flex;
     justify-content: flex-start;
     margin-left: 50px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 * {
