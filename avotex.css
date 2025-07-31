@@ -22,6 +22,18 @@
     --transition: all 0.3s ease;
 }
 
+.instagram{
+    background-color: white;
+    margin-bottom: -30px;
+}
+
+.instagram a{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 50px;
+    font-size: 30px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1838,6 +1850,7 @@ body {
     .price{
         font-size: 25px;
     }
+
 }
 
 

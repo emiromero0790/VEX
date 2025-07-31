@@ -8,6 +8,48 @@
     <link rel="stylesheet" href="cart.css">
     <link rel="icon" type="image/png" href="images/vex logo final2.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("BSxLEeaCjlR33sZkl"); // tu User ID
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector(".submit-btn");
+      const originalText = submitBtn.innerHTML;
+
+      submitBtn.innerHTML = `
+        <span>Enviando...</span>
+        <div class="btn-animation"></div>
+      `;
+      submitBtn.disabled = true;
+
+      const templateParams = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        message: document.getElementById("message").value.trim()
+      };
+
+      emailjs.send("service_92stt0p", "template_i1dzybe", templateParams)
+        .then(function (response) {
+          alert("Mensaje enviado correctamente!");
+          form.reset();
+        }, function (error) {
+          alert("Error al enviar el mensaje.");
+          console.error("EmailJS Error:", error);
+        })
+        .finally(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
+    });
+  });
+</script>
+
 <!-- <script>
   let scrollSpeed = 1;        // pixeles por paso
   let intervalDelay = 10;     // milisegundos entre pasos
@@ -39,6 +81,7 @@
 
 
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -202,28 +245,30 @@
         <h2>Planes y Precios</h2>
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3>Plan Básico</h3>
-                <div class="price">$1999<span>/semestre</span></div>
+                <h3>Plan Sin Satélite</h3>
+                <div class="price">$456029<span>/anual</span></div>
                 <ul class="features-list">
-                    <li>Hasta 1000 escaneos mensuales</li>
-                    <li>Detección de 5 enfermedades comunes</li>
+                    <li>Escaneos ilimitados</li>
+                    <li>Detección de enfermedades comunes</li>
                     <li>Soporte por email</li>
                     <li>Actualizaciones de la app</li>
+                    <li>Reportes avanzados</li>
                 </ul>
-                <button onclick="addToCart('avotex-basic', 'Plan Básico', 6000, 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn">Seleccionar Plan</button>
+                <button onclick="addToCart('avotex-basic', 'Plan Satélite', 456029 , 'AvoTex', 'images/avocado-211592.jpg')" class="buy-btn">Seleccionar Plan</button>
             </div>
             <div class="pricing-card featured">
                 <div class="featured-tag">Más Popular</div>
-                <h3>Plan Pro</h3>
-                <div class="price">$6000<span>/semestre</span></div>
+                <h3>Plan Satélite</h3>
+                <div class="price">$469583<span>/anual</span></div>
                 <ul class="features-list">
+                    <li>Imágenes satelitáles georeferenciadas mediante satélite (API)</li>
                     <li>Escaneos ilimitados</li>
                     <li>Detección de todas las enfermedades</li>
                     <li>Soporte prioritario 24/7</li>
                     <li>Reportes avanzados</li>
                     <li>Acceso a nuevas características</li>
                 </ul>
-                <button onclick="addToCart('avotex-pro', 'Plan Pro', 1999, 'AvoTex', 'images/PLAN PRO.jpg')" class="buy-btn primary">Seleccionar Plan</button>
+                <button onclick="addToCart('avotex-pro', 'Plan Sin Satélite', 469583, 'AvoTex', 'images/PLAN PRO.jpg')" class="buy-btn primary">Seleccionar Plan</button>
             </div>
             <div class="pricing-card">
                 <h3>Plan Empresarial</h3>
@@ -274,7 +319,11 @@
                 <button type="submit" class="submit-btn">Enviar Mensaje</button>
             </form>
         </div>
-    </section>   
+    </section> 
+    <div class="instagram">
+        <img src="images/Instagram-Logo-No-Background.png" alt="Instagram logo" height="120px" href="https://www.instagram.com/avotex.mx/">
+        <a href="https://www.instagram.com/avotex.mx/">@avotex.mx</a>
+    </div>
 <footer class="footer2">
   <div class="footer-overlay"></div> 
   
@@ -302,5 +351,6 @@
 
     <script src="cart.js"></script>
     <script src="avotex.js"></script>
+
 </body>
 </html>
