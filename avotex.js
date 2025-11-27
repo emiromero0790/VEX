@@ -1,5 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Menú móvil toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     const navbar = document.querySelector('.navbar');
     let lastScroll = 0;
 
@@ -20,33 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });
-
-
-    const mainImage = document.querySelector('.gallery-main');
-    const thumbnails = document.querySelectorAll('.thumb');
-    let isZoomed = false;
-
-    mainImage.addEventListener('click', function() {
-        this.classList.toggle('zoomed');
-        isZoomed = !isZoomed;
-        
-        if (isZoomed) {
-            document.body.style.overflow = 'hidden';
-            this.style.cursor = 'zoom-out';
-        } else {
-            document.body.style.overflow = '';
-            this.style.cursor = 'zoom-in';
-        }
-    });
-
-    thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', function() {
-            mainImage.src = this.src;
-            mainImage.alt = this.alt;
-            thumbnails.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-        });
     });
 
 
