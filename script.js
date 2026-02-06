@@ -328,3 +328,59 @@ document.addEventListener('keydown', (e) => {
         konamiIndex = 0;
     }
 });
+
+// ============================================
+// Menu Toggle - Versión Mejorada
+// ============================================
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.nav-list');
+const body = document.body;
+
+if (menuToggle && navList) {
+    // Toggle menú
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuToggle.classList.toggle('active');
+        navList.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    });
+
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+
+    // Cerrar menú al hacer click fuera de él
+    document.addEventListener('click', (e) => {
+        if (!navList.contains(e.target) && !menuToggle.contains(e.target)) {
+            if (navList.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navList.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        }
+    });
+
+    // Cerrar menú con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navList.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    // Ajustar al cambiar tamaño de ventana
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 968) {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+}
