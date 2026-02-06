@@ -137,3 +137,194 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(nextShowcaseSlide, 9000);
     }
 });
+
+// Smooth scroll para los enlaces de navegación
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Header scroll effect
+let lastScroll = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    } else {
+        header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Animación de entrada para elementos cuando entran en viewport
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observar elementos que deben animarse
+document.querySelectorAll('.service-card, .project-showcase, .team-member, .testimonial-card').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+});
+
+// Contador animado para estadísticas
+function animateCounter(element, target) {
+    const duration = 2000;
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + (element.dataset.suffix || '');
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + (element.dataset.suffix || '');
+        }
+    }, 16);
+}
+
+// Activar contadores cuando sean visibles
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statElement = entry.target.querySelector('h4');
+            const targetValue = parseInt(statElement.textContent);
+            if (!isNaN(targetValue)) {
+                statElement.dataset.suffix = statElement.textContent.replace(/[0-9]/g, '');
+                animateCounter(statElement, targetValue);
+            }
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.result-stat').forEach(stat => {
+    statsObserver.observe(stat);
+});
+
+// Manejo de formularios (si se agregan en el futuro)
+const contactForms = document.querySelectorAll('form');
+contactForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Aquí se puede agregar la lógica de envío de formulario
+        console.log('Formulario enviado');
+    });
+});
+
+// Loading state para botones
+document.querySelectorAll('button, .btn-primary, .btn-secondary, .btn-project').forEach(button => {
+    button.addEventListener('click', function() {
+        // Efecto de click
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Prevenir comportamiento por defecto en enlaces vacíos
+document.querySelectorAll('a[href=""]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Este enlace aún no tiene destino configurado');
+    });
+});
+
+// Parallax effect suave en hero
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual && scrolled < window.innerHeight) {
+        heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
+
+// Mobile menu toggle (si se agrega en el futuro)
+const createMobileMenu = () => {
+    const nav = document.querySelector('.nav-list');
+    const menuButton = document.createElement('button');
+    menuButton.classList.add('mobile-menu-toggle');
+    menuButton.innerHTML = '☰';
+    menuButton.style.display = 'none';
+    
+    if (window.innerWidth <= 968) {
+        menuButton.style.display = 'block';
+        document.querySelector('.nav-container').prepend(menuButton);
+        
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    }
+};
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('VEX Website loaded successfully');
+    
+    // Agregar clase para animaciones CSS
+    document.body.classList.add('loaded');
+});
+
+// Resize handler
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Lógica para resize si es necesario
+    }, 250);
+});
+
+// Preload de imágenes importantes
+const preloadImages = () => {
+    const images = document.querySelectorAll('img[data-preload]');
+    images.forEach(img => {
+        const source = img.dataset.src;
+        if (source) {
+            img.src = source;
+        }
+    });
+};
+
+window.addEventListener('load', preloadImages);
+
+// Easter egg: Konami code
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            console.log('🎉 ¡Código Konami activado! VEX te saluda 🚀');
+            document.body.style.animation = 'rainbow 2s ease infinite';
+            konamiIndex = 0;
+        }
+    } else {
+        konamiIndex = 0;
+    }
+});
