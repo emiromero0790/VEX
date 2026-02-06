@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Privacidad - VEX México</title>
+    <link rel="icon" type="image/png" href="images/vex logo final2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #219BEF;
+            --primary-dark: #000000;
+            --primary-black: #0A0A0A;
+            --secondary-dark: #1A1A1A;
+            --accent-blue: #176BAA;
+            --accent-blue-light: #61B7F1;
+            --gradient-primary: linear-gradient(135deg, #219BEF 0%, #176BAA 100%);
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-blue: 0 10px 40px -5px rgba(33, 155, 239, 0.4);
+            --transition-base: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: #FFFFFF;
+            background-color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(33, 155, 239, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            transition: var(--transition-base);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition-base);
+        }
+
+        .btn-back:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-back svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Privacy Hero Section */
+        .privacy-hero {
+            position: relative;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(to bottom, #000000 0%, #0f172a 50%, #000000 100%);
+            overflow: hidden;
+        }
+
+        .privacy-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg1OSwxMzAsMjQ2LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .privacy-hero-content {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .privacy-icon-large {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.5);
+        }
+
+        .privacy-icon-large svg {
+            width: 50px;
+            height: 50px;
+            color: white;
+            stroke-width: 2;
+        }
+
+        .privacy-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .privacy-hero .subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            color: #9CA3AF;
+            margin-bottom: 2rem;
+        }
+
+        .last-update {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: #60A5FA;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Privacy Content Section */
+        .privacy-content-section {
+            padding: 4rem 2rem;
+            background: #000000;
+        }
+
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .privacy-card {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            border: 1px solid rgba(107, 114, 128, 0.3);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.2);
+        }
+
+        .privacy-card h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .privacy-card h2::before {
+            content: '';
+            width: 4px;
+            height: 2rem;
+            background: linear-gradient(to bottom, #3B82F6, #2563EB);
+            border-radius: 4px;
+        }
+
+        .privacy-card h3 {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            color: #60A5FA;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-card p {
+            color: #9CA3AF;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .privacy-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-card ul li {
+            color: #9CA3AF;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .privacy-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 8px;
+            height: 8px;
+            background: #3B82F6;
+            border-radius: 50%;
+        }
+
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3B82F6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            color: #FFFFFF;
+            margin-bottom: 0;
+        }
+
+        .contact-info-privacy {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(30, 58, 138, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info-privacy h4 {
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .contact-info-privacy p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info-privacy a {
+            color: #60A5FA;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-privacy a:hover {
+            color: #93C5FD;
+            text-decoration: underline;
+        }
+
+        /* Footer Simple */
+        .footer-simple {
+            background: #0A0A0A;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-simple p {
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #60A5FA;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .privacy-hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .privacy-content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .privacy-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo {
+                height: 40px;
+            }
+
+            .privacy-hero {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .privacy-icon-large {
+                width: 80px;
+                height: 80px;
+            }
+
+            .privacy-icon-large svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .privacy-hero h1 {
+                font-size: 2rem;
+            }
+
+            .privacy-content-section {
+                padding: 2rem 1rem;
+            }
+
+            .privacy-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .privacy-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .privacy-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .privacy-card p,
+            .privacy-card ul li {
+                font-size: 0.95rem;
+            }
+
+            .contact-info-privacy {
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <img src="images/vex nombre.png" alt="VEX Imagotipo" class="logo">
+            <a href="index.html" class="btn-back">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- Privacy Hero Section -->
+    <section class="privacy-hero">
+        <div class="privacy-hero-content">
+            <div class="privacy-icon-large">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+            </div>
+            <h1>Aviso de Privacidad</h1>
+            <p class="subtitle">Protección de Datos Personales</p>
+            <span class="last-update">Última actualización: Febrero 2025</span>
+        </div>
+    </section>
+
+    <!-- Privacy Content Section -->
+    <section class="privacy-content-section">
+        <div class="privacy-container">
+            
+            <!-- Aviso de Privacidad Simplificado -->
+            <div class="privacy-card">
+                <h2>Aviso de Privacidad</h2>
+                <p>
+                    <strong>VEX MÉXICO</strong>, con domicilio en Morelia, Michoacán, México, es responsable del uso y protección de sus datos personales de conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Los datos personales que recabamos (nombre, correo electrónico, teléfono, empresa) serán utilizados exclusivamente para proveer nuestros servicios de desarrollo de software, gestión de proyectos, facturación, atención al cliente y comunicaciones relacionadas con los servicios contratados. Sus datos están protegidos mediante medidas de seguridad técnicas, administrativas y físicas que garantizan su confidencialidad.
+                </p>
+                <p>
+                    Usted tiene derecho en todo momento a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales (Derechos ARCO), así como a revocar su consentimiento enviando una solicitud a <a href="mailto:vexmxoficial@gmail.com">vexmxoficial@gmail.com</a>. No compartiremos su información con terceros sin su consentimiento expreso, salvo en los casos previstos por la ley. Utilizamos cookies para mejorar su experiencia de navegación, las cuales pueden ser deshabilitadas desde la configuración de su navegador. Cualquier modificación a este aviso será notificada a través de nuestro sitio web. Para más información o ejercer sus derechos, contáctenos al correo electrónico o teléfono indicados en nuestra página de contacto.
+                </p>
+                
+                <div class="contact-info-privacy">
+                    <h4>Contacto:</h4>
+                    <p>
+                        <svg style="width:20px;height:20px;vertical-align:middle;margin-right:8px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <strong>Email:</strong> 
+                        <a href="mailto:vexmxoficial@gmail.com">vexmxoficial@gmail.com</a>
+                    </p>
+                    <p>
+                        <svg style="width:20px;height:20px;vertical-align:middle;margin-right:8px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <strong>Teléfono:</strong> 
+                        <a href="tel:+524432005865">+52 443 200 5865</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="footer-simple">
+        <p>&copy; 2025 VEX México. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="aviso-privacidad.html">Aviso de Privacidad</a>
+        </div>
+    </footer>
+
+</body>
+</html>
