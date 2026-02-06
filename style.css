@@ -1223,130 +1223,104 @@ header {
     transform: translateY(-4px);
 }
 
+/* ============================================
+   PROJECT IMAGE GALLERY - VERSIÓN SIN BORDES DESPERDICIADOS
+   ============================================ */
+
+/* Project Image Container */
 .project-image-container {
     position: relative;
     width: 100%;
     height: 600px;
-    overflow: auto;
+    overflow: hidden; /* CAMBIADO: Sin scroll para eliminar espacios */
     display: block;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 24px 24px 0 0; /* Solo bordes superiores */
+    background: #000000; /* Color sólido de fondo */
+    border-radius: 24px 24px 0 0;
 }
 
-/* Estilos personalizados para la scrollbar */
-.project-image-container::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.project-image-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.project-image-container::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.5);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-.project-image-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.8);
-}
-
-/* Firefox scrollbar */
-.project-image-container {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.5) rgba(0, 0, 0, 0.2);
-}
-
-/* Project Image Gallery - 2x2 OPTIMIZADO sin espacios desperdiciados */
+/* Project Image Gallery - Grid 2x2 SIN espacios */
 .project-image-gallery {
     width: 100%;
-    min-width: 100%; /* Quitado el min-width de 800px */
-    height: auto;
-    min-height: 100%; /* Ocupar todo el contenedor */
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; /* Filas flexibles */
-    gap: 0; /* SIN espacios entre imágenes */
-    padding: 0; /* SIN padding */
+    grid-template-rows: 1fr 1fr;
+    gap: 0; /* CERO espacios */
+    padding: 0; /* CERO padding */
+    margin: 0;
 }
 
 .project-image-gallery img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* COVER para llenar todo el espacio */
-    border-radius: 0; /* Sin bordes redondeados internos */
+    object-fit: cover; /* Llenar completamente el espacio */
+    border-radius: 0; /* SIN bordes internos */
     transition: all 0.3s ease;
     box-shadow: none;
     background: transparent;
+    display: block; /* Eliminar espacio inline */
+    margin: 0;
+    padding: 0;
 }
 
 .project-image-gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     z-index: 10;
+    position: relative;
 }
 
-/* Bordes redondeados solo en las esquinas externas */
+/* Bordes redondeados SOLO en las esquinas externas */
 .project-image-gallery img:nth-child(1) {
-    border-radius: 24px 0 0 0; /* Esquina superior izquierda */
+    border-top-left-radius: 24px;
 }
 
 .project-image-gallery img:nth-child(2) {
-    border-radius: 0 24px 0 0; /* Esquina superior derecha */
+    border-top-right-radius: 24px;
 }
 
-.project-image-gallery img:nth-child(3) {
-    border-radius: 0; /* Sin bordes */
-}
-
+.project-image-gallery img:nth-child(3),
 .project-image-gallery img:nth-child(4) {
-    border-radius: 0; /* Sin bordes */
+    border-radius: 0;
 }
 
-/* Overlay gradientes - REMOVIDOS para no interferir */
+/* REMOVER overlays completamente */
 .project-image-overlay,
 .project-image-grid {
-    display: none; /* Ocultar overlays */
+    display: none !important;
 }
 
-/* Responsive - Desktop */
+/* Gradientes de fondo del proyecto */
+.gradient-green,
+.gradient-orange,
+.gradient-purple {
+    background: transparent !important; /* Quitar gradientes que causan espacios */
+}
+
+/* Desktop */
 @media (min-width: 969px) {
     .project-image-container {
         height: 600px;
     }
-    
-    .project-image-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px 300px;
-    }
 }
 
-/* Responsive - Tablet */
+/* Tablet */
 @media (max-width: 968px) {
     .project-image-container {
         height: 500px;
         border-radius: 16px 16px 0 0;
     }
     
-    .project-image-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 250px 250px;
-        gap: 0;
-    }
-    
     .project-image-gallery img:nth-child(1) {
-        border-radius: 16px 0 0 0;
+        border-top-left-radius: 16px;
     }
     
     .project-image-gallery img:nth-child(2) {
-        border-radius: 0 16px 0 0;
+        border-top-right-radius: 16px;
     }
 }
 
-/* Responsive - Mobile */
+/* Mobile */
 @media (max-width: 640px) {
     .project-image-container {
         height: 400px;
@@ -1354,12 +1328,11 @@ header {
     }
     
     .project-image-gallery {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-        grid-template-rows: repeat(4, 100px); /* 4 filas de 100px */
-        gap: 0;
+        grid-template-columns: 1fr; /* Una columna */
+        grid-template-rows: repeat(4, 1fr); /* 4 filas iguales */
     }
     
-    /* Bordes redondeados solo en la primera imagen (arriba) */
+    /* En móvil, solo la primera imagen tiene borde superior */
     .project-image-gallery img:nth-child(1) {
         border-radius: 16px 16px 0 0;
     }
